@@ -10,3 +10,5 @@
     "ips": ["ip 1", "ip 1", "ip 3"]
 }
 ```
+
+Developed by [flav#2200](https://github.com/flav28) with ❤️
