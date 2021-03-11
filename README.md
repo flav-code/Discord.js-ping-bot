@@ -1,6 +1,6 @@
 # Discord.js-ping-bot
 
-<script type="text/javascript">
+```json
 {
     "token": "",
     "prefix": ".",
@@ -9,4 +9,4 @@
     "bot_message_id": "",
     "ips": ["ip 1", "ip 1", "ip 3"]
 }
-</script>
+```
