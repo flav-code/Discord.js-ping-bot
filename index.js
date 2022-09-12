@@ -48,7 +48,7 @@ client.on("ready", () => {
                     timeout: 10
                 });
 
-                desc += res.alive ? `${service.name} :white_check_mark: ${Math.round(res.avg)} ms\n` : `${service.name} :x: ${Math.round(res.avg)} ms\n`;
+                desc += res.alive ? `${service.name} :white_check_mark: ${Math.round(res.avg)} ms\n` : `${service.name} :x:`;
 
             }
 
