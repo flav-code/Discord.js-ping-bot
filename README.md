@@ -1,6 +1,6 @@
 # Discord.js-ping-bot v1.0.0
 
-```json
+```js
 {
     "token": "",
     "prefix": ".",
