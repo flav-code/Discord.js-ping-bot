@@ -42,13 +42,13 @@ client.on("ready", () => {
             const embed = new Discord.MessageEmbed()
             let desc = "";
 
-            for (const ip of ips) {
+            for (const service of services) {
 
-                const res = await ping.promise.probe(ip, {
+                const res = await ping.promise.probe(service.ip, {
                     timeout: 10
                 });
 
-                desc += res.alive ? `${ip} :white_check_mark: ${Math.round(res.avg)} ms\n` : `${ip} :x: ${Math.round(res.avg)} ms\n`;
+                desc += res.alive ? `${service.name} :white_check_mark: ${Math.round(res.avg)} ms\n` : `${service.name} :x: ${Math.round(res.avg)} ms\n`;
 
             }
 
