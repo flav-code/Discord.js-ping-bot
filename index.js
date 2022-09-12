@@ -16,7 +16,7 @@ client.on("ready", () => {
 
             const obj = JSON.parse(data);
 
-            const ips = obj.ips;
+            const services = obj.ips;
             if (ips.lenght === 0) return console.log("No ip in config");
 
             const guild = client.guilds.cache.get(obj.guild_id);
