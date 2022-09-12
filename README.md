@@ -7,7 +7,20 @@
     "guild_id": "",
     "guild_channel_id": "",
     "bot_message_id": "",
-    "ips": ["ip 1", "ip 1", "ip 3"]
+    "ips": [
+    {
+        ip: "ip 1",
+        name: "Service name"
+    },
+    {
+        ip: "ip 2",
+        name: "Service name"
+    },
+    {
+        ip: "ip 3",
+        name: "Service name"
+    },
+]
 }
 ```
 
