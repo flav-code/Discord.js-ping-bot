@@ -1,4 +1,4 @@
-# Discord.js-ping-bot v1.0.0
+# Discord.js-ping-bot v1.1.0
 
 ```js
 {
