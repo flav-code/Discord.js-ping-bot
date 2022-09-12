@@ -8,19 +8,19 @@
     "guild_channel_id": "",
     "bot_message_id": "",
     "ips": [
-    {
-        "ip": "ip 1",
-        "name": "Service name"
-    },
-    {
-        "ip": "ip 2",
-        "name": "Service name"
-    },
-    {
-        "ip": "ip 3",
-        "name": "Service name"
-    }
-]
+        {
+            "ip": "ip 1",
+            "name": "Service name"
+        },
+        {
+            "ip": "ip 2",
+            "name": "Service name"
+        },
+        {
+            "ip": "ip 3",
+            "name": "Service name"
+        }
+    ]
 }
 ```
 
