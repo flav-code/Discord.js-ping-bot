@@ -22,11 +22,11 @@ client.on("ready", () => {
             const guild = client.guilds.cache.get(obj.guild_id);
 
 
-            if (guild === undefined) return console.log("Invalide guild id");
+            if (!guild) return console.log("Invalide guild id");
 
             const channel = guild.channels?.cache.get(obj.guild_channel_id);
 
-            if (channel === undefined) return console.log("Invalide channel id");
+            if (!channel) return console.log("Invalide channel id");
 
 
             let msg = null;
@@ -37,7 +37,7 @@ client.on("ready", () => {
                 msg = null;
             }
 
-            if (msg === undefined) return console.log("Invalide message id");
+            if (!msg) return console.log("Invalide message id");
 
             const embed = new Discord.MessageEmbed()
             let desc = "";
