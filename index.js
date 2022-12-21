@@ -1,5 +1,11 @@
-const Discord = require("discord.js");
-const client = new Discord.Client({intents:32768});
+const { GatewayIntentBits, Client, ActivityType, EmbedBuilder } = require("discord.js");
+const client = new Client({
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildMessages,
+    ]
+});
 const config = require("./config.json");
 
 const ping = require('ping');
@@ -9,7 +15,7 @@ client.on("ready", () => {
 
     console.log("Ping bot ready (Dev by flav#2200)");
 
-    client.user.setActivity("by flav#2200", {type: "WATCHING"});
+    client.user.setActivity("by flav#2200", { type: ActivityType.Watching });
 
     setInterval(() => {
         fs.readFile('config.json', 'utf8', async function (err, data) {
@@ -19,12 +25,12 @@ client.on("ready", () => {
             const services = obj.ips;
             if (services.lenght === 0) return console.log("No ip in config");
 
-            const guild = client.guilds.cache.get(obj.guild_id);
+            const guild = client.guilds.cache.get(obj.guild_id) || await client.guilds.fetch(obj.guild_id);
 
 
             if (!guild) return console.log("Invalide guild id");
 
-            const channel = guild.channels?.cache.get(obj.guild_channel_id);
+            const channel = guild.channels?.cache.get(obj.guild_channel_id) || await client.channels.fetch(obj.guild_channel_id);
 
             if (!channel) return console.log("Invalide channel id");
 
@@ -32,14 +38,15 @@ client.on("ready", () => {
             let msg = null;
 
             try {
-                msg = await channel.messages.fetch(obj.bot_message_id);
+                if (obj.bot_message_id.length)
+                    msg = await channel.messages.fetch(obj.bot_message_id);
             } catch (error) {
                 msg = null;
             }
 
             if (!msg) return console.log("Invalide message id");
 
-            const embed = new Discord.MessageEmbed()
+            const embed = new EmbedBuilder()
             let desc = "";
 
             for (const service of services) {
@@ -47,15 +54,16 @@ client.on("ready", () => {
                 const res = await ping.promise.probe(service.ip, {
                     timeout: 10
                 });
-
                 desc += res.alive ? `${service.name} :white_check_mark: \`${Math.round(res.avg)}ms\`\n` : `${service.name} :x:\n`;
 
             }
 
-            embed.setTitle("Status des services")
-            embed.setDescription(desc.length === 0 ? "no ip " : desc);
+            embed
+                .setTitle("Status des services")
+                .setDescription(desc.length === 0 ? "no ip " : desc);
 
-            msg.edit("", embed);
+            msg.edit({ content: null, embeds: [embed] });
+
 
         })
 
@@ -63,14 +71,14 @@ client.on("ready", () => {
 
 })
 
-client.on("message", async message => {
-    if (message.content.startsWith(config.prefix + "embed")) {
+client.on("messageCreate", (message) => {
+    if (message.content.startsWith(`${config.prefix}embed`)) {
 
         fs.readFile('config.json', 'utf8', function (err, data) {
 
             const obj = JSON.parse(data);
 
-            message.channel.send("this message will be edited automaticaly !").then(async m => {
+            message.channel.send("this message will be edited automaticaly !").then(m => {
 
                 obj.guild_id = m.guild.id;
                 obj.guild_channel_id = m.channel.id;

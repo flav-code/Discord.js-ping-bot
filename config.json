@@ -4,19 +4,19 @@
     "guild_id": "",
     "guild_channel_id": "",
     "bot_message_id": "",
+    "refresh_interval": 10,
     "ips": [
-    {
-        "ip": "ip 1",
-        "name": "Service name"
-    },
-    {
-        "ip": "ip 2",
-        "name": "Service name"
-    },
-    {
-        "ip": "ip 3",
-        "name": "Service name"
-    }
-]
+        {
+            "ip": "flavibot.xyz",
+            "name": "FlaviBot web"
+        },
+        {
+            "ip": "api.flavibot.xyz",
+            "name": "FlaviBot API"
+        },
+        {
+            "ip": "google.com",
+            "name": "Google"
+        }
+    ]
 }
-

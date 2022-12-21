@@ -1,6 +1,6 @@
 {
   "name": "ping-bot",
-  "version": "1.1.0",
+  "version": "1.2.2",
   "description": "Discord.js ping bot",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "flav#2200",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.5.1",
+    "discord.js": "^14.7.1",
     "ping": "^0.4.0"
   }
 }
