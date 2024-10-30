@@ -13,9 +13,9 @@ const fs = require('fs');
 
 client.on("ready", () => {
 
-    console.log("Ping bot ready (Dev by flav#2200)");
+    console.log("Ping bot ready (Dev by flav-code#2200)");
 
-    client.user.setActivity("by flav#2200", { type: ActivityType.Watching });
+    client.user.setActivity("by flav-code#2200", { type: ActivityType.Watching });
 
     setInterval(() => {
         fs.readFile('config.json', 'utf8', async function (err, data) {

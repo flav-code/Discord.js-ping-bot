@@ -27,4 +27,4 @@ Don't forget to enable MESSAGE CONTENT intent
 }
 ```
 
-Developed by [flav#2200](https://github.com/flav28) with ❤️
+Developed by [flav-code#2200](https://github.com/flav-code) with ❤️
