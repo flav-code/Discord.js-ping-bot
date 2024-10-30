@@ -1,4 +1,4 @@
-# Discord.js-ping-bot v1.1.0
+# Discord.js-ping-bot v1.2.0
 
 Don't forget to enable MESSAGE CONTENT intent
 
