@@ -23,7 +23,7 @@ client.on("ready", () => {
             const obj = JSON.parse(data);
 
             const services = obj.ips;
-            if (services.lenght === 0) return console.log("No ip in config");
+            if (services.length === 0) return console.log("No ip in config");
 
             const guild = client.guilds.cache.get(obj.guild_id) || await client.guilds.fetch(obj.guild_id);
 
