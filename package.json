@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "flav#2200",
+  "author": "flav-code",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.8.0",

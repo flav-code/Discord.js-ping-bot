@@ -13,9 +13,9 @@ const fs = require('fs');
 
 client.on("ready", () => {
 
-    console.log("Ping bot ready (Dev by flav#2200)");
+    console.log("Ping bot ready (Dev by flav-code)");
 
-    client.user.setActivity("by flav#2200", { type: ActivityType.Watching });
+    client.user.setActivity("by flav-code", { type: ActivityType.Watching });
 
     setInterval(() => {
         fs.readFile('config.json', 'utf8', async function (err, data) {
@@ -23,7 +23,7 @@ client.on("ready", () => {
             const obj = JSON.parse(data);
 
             const services = obj.ips;
-            if (services.lenght === 0) return console.log("No ip in config");
+            if (services.length === 0) return console.log("No ip in config");
 
             const guild = client.guilds.cache.get(obj.guild_id) || await client.guilds.fetch(obj.guild_id);
 
